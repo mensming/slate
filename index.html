@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;json&quot;,&quot;xml&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,9 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="json">json</a>
-              <a href="#" data-language-name="xml">xml</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -224,7 +222,10 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#create-a-user" class="toc-h1 toc-link" data-title="Create a User">Create a User</a>
+          </li>
+          <li>
+            <a href="#retrieve-a-user" class="toc-h1 toc-link" data-title="Retrieve a User">Retrieve a User</a>
           </li>
           <li>
             <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
@@ -241,28 +242,761 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Conenza APIs.  You can use our APIs to access</p>
+<p>Welcome to the Conenza User APIs.  You can use our APIs to access</p>
 
 <ul>
 <li>User - Create, retrieve and update users</li>
-<li>Events - Create, retrieve and update events</li>
-<li>Jobs - Create, retrieve and update jobs</li>
 </ul>
-<h1 id='authentication'>Authentication</h1>
+<h1 id='create-a-user'>Create a User</h1>
+<p>Endpoint: Domain/api/v1/user</p>
+
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code><span class="c"># TODO: With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-</code></pre>
+<pre class="highlight json tab-json"><code><span class="err">#</span><span class="w"> </span><span class="err">TODO</span><span class="p">:</span><span class="w"> </span><span class="err">With</span><span class="w"> </span><span class="err">shell</span><span class="p">,</span><span class="w"> </span><span class="err">you</span><span class="w"> </span><span class="err">can</span><span class="w"> </span><span class="err">just</span><span class="w"> </span><span class="err">pass</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">correct</span><span class="w"> </span><span class="err">header</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">each</span><span class="w"> </span><span class="err">request</span><span class="w">
+</span><span class="err">curl</span><span class="w"> </span><span class="s2">"api_endpoint_here"</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Term Record Example</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="err">STATUS</span><span class="p">:</span><span class="w"> </span><span class="s2">"TERM_RECORD"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='retrieve-a-user'>Retrieve a User</h1>
+<p>Endpont Domain/api/v1/user/{userid}</p>
+
+<blockquote>
+<p>Approved Record</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shawn+term918b@conenza.net"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"agreedToTermsOfUse"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shawn"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Term918b"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nickname"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"quickDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"registrationStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATUS_TERM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"middleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"birthdayMonth"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"birthdayDay"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"birthdayYear"</span><span class="p">:</span><span class="w"> </span><span class="mi">1896</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"inactivationReason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"inactivationReasonType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Term Record"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"previousName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"forwardingEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"forwardingEmailOptIn"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"forwardingEmailPrivacy"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiveAnnouncements"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiveEvents"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiveOpportunities"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"receiveNewsletters"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscribedToMessages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscribedToInvites"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscribedToInstant"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscribedToDigest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WEEKLY"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2010"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"addressModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"educationalModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"phoneModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"emailModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"imModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"workHistoryModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"keywordModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"adminKeywordModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"userRoleModels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+
+      </span><span class="s2">"roleId"</span><span class="p">:</span><span class="w"> </span><span class="mi">11128966</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"roleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>Conenza uses HTTP basic authentication for users with the proper roles to access the API.  Contact your Conenza Customer Success team for account name and credentials.</p>
-<h1 id='users'>Users</h1><h1 id='events'>Events</h1><h1 id='jobs'>Jobs</h1>
+<h1 id='users'>Users</h1>
+<p>Conenza Community Platform
+JSON Rest User API Developer Guide</p>
+
+<p>Introduction
+Audience</p>
+
+<p>This document is intended to provide instructions for developers writing to the Conenza User API. For specific questions, please contact your Conenza Account Manager.</p>
+
+<p>Conenza User API Basics
+The Conenza User API is a RESTful web service that supports requests to register, update, delete, and retrieve users on the Conenza Community Platform.</p>
+
+<p>You access these resources by sending an HTTP request to the Conenza API server.  The server replies with a response that either contains the data you requested, id, or error message.</p>
+
+<p>You must supply username/password authentication information in the request using the HTTP BASIC authentication mechanism.  See Authentication, below for more details.</p>
+
+<p>In these documents, when a portion of a URL, path, or parameter value is shown in angle brackets <like-this>, this indicates that you should replace the bracketed value with a particular value appropriate to your request.</p>
+
+<p>Authentication
+<Update with private / public key items></p>
+
+<p>Conenza User API Summary
+Action
+Path
+Method
+Request content-type
+Register a User
+/api/v1/users
+POST
+application/json
+Get User Info
+/api/v1/users/<identifier-type>/<identifier>
+GET
+N/A
+Delete a User
+/api/v1/users/<identifier-type>/<identifier>
+DELETE
+N/A
+Modify a User
+/api/v1/users/<identifier-type>/<identifier>
+PUT
+application/json</p>
+
+<p>Registering a User 
+Single or multiple users can be submitted with a single POST. An example of valid JSON for registering users is provided with this documentation: register-user.json.</p>
+
+<p>Action
+Path
+METHOD
+Request
+content-type
+Register User
+/api/v1/users
+POST
+application/json
+Custom Field List
+/api/v1/users/customfields
+GET
+N/A
+Country List Values
+/api/v1/users/countries
+GET
+N/A
+Prefix List Values
+/api/v1/users/prefixs
+GET
+N/A
+Suffix List Values
+/api/v1/users/suffixs
+GET
+N/A
+Custom Field List Values
+/api/v1/users/customfields/<customfield>
+GET
+N/A</p>
+
+<p>The following tags are available during a POST.</p>
+
+<p>Tag
+Required?
+Data Type
+Default
+Notes
+firstName
+yes
+String
+N/A</p>
+
+<p>middleName
+n
+String
+blank</p>
+
+<p>lastName
+yes
+String
+N/A</p>
+
+<p>nickname
+n
+String
+blank</p>
+
+<p>previousName
+n
+String
+blank</p>
+
+<p>prefix
+n
+String
+null</p>
+
+<p>suffix
+n
+String
+null</p>
+
+<p>emailAddress
+yes
+String
+N/A</p>
+
+<p>birthdayMonth
+n
+Integer
+2
+January is 0
+birthdayDay
+n
+Integer
+11</p>
+
+<p>birthdayYear
+n
+Integer
+1901</p>
+
+<p>gender
+n
+String
+male</p>
+
+<p>quickDescription
+n
+String
+blank
+A professional summary
+linkedInPublicUrl
+n
+String
+null</p>
+
+<p>twitterPublicUrl
+n
+String
+null</p>
+
+<p>facebookPublicUrl
+n
+String
+null</p>
+
+<p>otherPublicUrl
+n
+String
+null</p>
+
+<p>notificationPreferences
+n
+String
+null
+Not implemented for all clients
+subscriptionPreference
+n
+String
+null</p>
+
+<p>subscribedToMessages
+n
+Boolean
+true</p>
+
+<p>subscribedToInvites
+n
+Boolean
+true</p>
+
+<p>subscribedToDigest
+n
+String
+WEEKLY</p>
+
+<p>receiveAnnouncements
+n
+Boolean
+true</p>
+
+<p>receiveEvents
+n
+Boolean
+true</p>
+
+<p>receiveOpportunities
+n
+Boolean
+true</p>
+
+<p>receiveNewsletters
+n
+Boolean
+true</p>
+
+<p>jobsReturnToCS
+n
+Boolean
+null
+Not implemented for all clients
+jobsOther
+n
+Boolean
+null
+Not implemented for all clients
+jobsSalaried
+n
+Boolean
+null
+Not implemented for all clients
+jobsContract
+n
+Boolean
+null
+Not implemented for all clients
+language
+n
+String
+en_US</p>
+
+<p>country
+n
+String
+null</p>
+
+<p>timeZone
+n
+String
+America/Los Angeles</p>
+
+<p>privacy
+n
+String
+NONE/Only Me
+Applies to client-specific info, “Additional Information” on profile
+CSID
+n
+String
+null
+A PeopleKey
+agreedToTermsOfUse
+n
+Boolean
+false</p>
+
+<p>registrationStatus
+n
+String
+STATUS_PENDING</p>
+
+<p>active
+n
+Boolean
+false</p>
+
+<p>inactivationReason
+n
+String
+blank</p>
+
+<p>inactivationReasonType
+n
+String
+null</p>
+
+<p>Notes
+n
+String
+null</p>
+
+<p>userStatus
+n
+String
+blank</p>
+
+<p>customFields
+n
+Map
+null
+A list of key:value pairs
+phoneModels
+n
+Array
+empty
+See information below
+imModels
+n
+Array
+empty
+See information below
+emailModels
+n
+Array
+empty
+See information below
+workHistoryModels
+n
+Array
+empty
+See information below
+educationalModels
+n
+Array
+empty
+See information below
+keywordModels
+n
+Array
+empty
+See information below
+adminKeywordModels
+n
+Array
+empty
+See information below
+userRoleModels
+n
+Array
+empty
+See information below
+registrationDate
+n
+String
+Today’s date
+Format ‘MMM d, yyyy hh:mm:ss am/pm’
+image
+n
+String
+null
+Base64 –encoded, max length 144 kb</p>
+
+<p>Unless otherwise specified, the above fields are simple key:value pairs. Some fields are submitted as arrays of key:value pairs, including contact information, work histories, education histories, and keywords.  See the provided json example for the required format.</p>
+
+<p>phoneModels, imModels, and emailModels
+Tag
+Required?
+Data Type
+Default
+Notes
+value
+yes
+String
+N/A</p>
+
+<p>type
+n
+String
+Null
+“Business”, etc, for phoneModels and emailModels. “AIM”, etc, for imModels.
+isPrimary
+n
+Boolean
+False</p>
+
+<p>privacy
+n
+String
+NONE/ALL_PARTIES</p>
+
+<p>addressModels
+Tag
+Required?
+Data Type
+Default
+Notes
+line1
+N
+String
+Blank</p>
+
+<p>line2
+N
+String
+Blank</p>
+
+<p>line3
+N
+String
+Blank</p>
+
+<p>city
+N
+String
+Blank</p>
+
+<p>state
+N
+String
+Null
+2 letter abbreviation for US, Canada, and Australia; for other countries any string
+county
+N
+String
+Blank</p>
+
+<p>zip
+N
+String
+Blank</p>
+
+<p>type
+N
+String
+Null
+“Business”, etc.
+primary
+N
+Boolean
+False</p>
+
+<p>privacy
+N
+String
+NONE/ALL_PARTIES</p>
+
+<p>keywordModels and adminKeywordModels
+Tag
+Required?
+Data Type
+Default
+Notes
+keyword
+yes
+String
+N/A</p>
+
+<p>workHistoryModels
+Tag
+Required?
+Data Type
+Default
+Notes
+title
+n
+String
+Blank</p>
+
+<p>businessRole
+yes
+String
+N/A
+“Employee or Executive”, etc
+company
+n
+String
+Blank</p>
+
+<p>startMonth
+n
+Integer
+0</p>
+
+<p>startYear
+n
+Integer
+0</p>
+
+<p>endMonth
+n
+Integer
+0</p>
+
+<p>endYear
+n
+Integer
+0</p>
+
+<p>isCurrent
+n
+Boolean
+False</p>
+
+<p>description
+n
+String
+Blank</p>
+
+<p>privacy
+n
+String
+NONE/ALL_PARTIES</p>
+
+<p>companyUrl
+n
+String
+Null</p>
+
+<p>industry
+n
+String
+Null</p>
+
+<p>educationalModels
+Tag
+Required?
+Data Type
+Default
+Notes
+degree
+n
+String
+Blank</p>
+
+<p>institute
+n
+String
+blank</p>
+
+<p>major
+n
+String
+blank</p>
+
+<p>startYear
+n
+Integer
+0</p>
+
+<p>endYear
+n
+Integer
+0</p>
+
+<p>isCurrent
+n
+Boolean
+false</p>
+
+<p>state
+n
+String
+blank</p>
+
+<p>country
+n
+String
+null</p>
+
+<p>privacy
+n
+String
+NONE/ALL_PARTIES</p>
+
+<p>userRoleModels
+Tag
+Required?
+Data Type
+Default
+Notes
+roleId
+n
+String
+0</p>
+
+<p>roleName
+yes
+String
+blank
+String name of role</p>
+
+<p>Responses
+207 MULTI-STATUS
+See the status code for each record</p>
+
+<p>201 CREATED
+The User was successfully created.</p>
+
+<p>400 BAD REQUEST
+The content of your JSON request failed to meet validation.</p>
+
+<p>Getting User Information
+User information can be retrieved using GET. Users can be identified with their user ID, email, or CSID.</p>
+
+<p>Action
+Path
+Method
+Request content-type
+Get info on the first 100 Users
+/api/v1/users
+GET
+N/A
+Get a page of Users
+/api/v1/users?start=1&amp;end=10
+GET
+N/A
+Get a single User’s Info with userId
+/api/v1/users/<userId>
+GET
+N/A
+Get a single User’s Info with another identifier
+/api/v1/users/<identifier-type>/<identifier>
+GET
+N/A
+Get a single User’s field
+/api/v1/users/<identifier-type>/<identifier>?fieldList=<tag>,<tag>
+GET
+N/A</p>
+
+<p>All of the POST fields available during registration are also available with GET except image.  Additionally, the following fields are read-only, available with GET but not modifiable using PUT or POST.  </p>
+
+<p>Tag
+lastFailedLoginDate
+failedLoginAttempts
+Lockout
+lockoutDate
+createdDate
+createdBy
+modifiedDate
+modifiedBy
+lastLoginDate
+activationDate
+ssoUser
+loginDate</p>
+
+<p>Inactivating a User
+With DELETE, users are inactivated but not removed from the system.</p>
+
+<p>Action
+Path
+Method
+Request content-type
+Delete a User
+/api/v1/users/&lt; userId&gt;
+DELETE
+N/A</p>
+
+<p>Modifying a User
+Specific user fields can be modified using PUT. The same fields available for registration are also available to be modified.</p>
+
+<p>Action
+Path
+Method
+Request content-type
+Modify a User
+/api/v1/users/<userId>
+PUT
+application/json</p>
+
+<p>Generic HTTP Response Codes
+400 BAD_REQUEST
+The request you made failed validation.  See the content body for a detailed error message.</p>
+
+<p>404 NOT_FOUND
+The request you made was for an unknown resource. </p>
+
+<p>500 INTERNAL_SERVER_ERROR
+Unanticipated error. Please contact Conenza Support and provide a copy of your request file and the reported error.</p>
+
+<p>501 NOT_IMPLEMENTED
+The request you made tried to use an HTTP method that is not supported by the API or an HTTP method that does not support your specific request (such as a non-EXPIRE status change).</p>
+
+<p>415 UNSUPPORTED MEDIA TYPE
+The request you made had the wrong MIME type.</p>
+<h1 id='events'>Events</h1><h1 id='jobs'>Jobs</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
                 <a href="#" data-language-name="json">json</a>
-                <a href="#" data-language-name="xml">xml</a>
           </div>
       </div>
     </div>
